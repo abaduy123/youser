@@ -10,7 +10,7 @@ export default function CoopDetails () {
             
             {coop_data.map((co)=>{
                 return (
-                    <div className="shadow-md border rounded-xl mx-auto bg-white p-6 m-6 w-full sm:w-full md:w-1/2 lg:w-1/3 ">
+                    <div key={co.coop_opportunity_provider} className="shadow-md border rounded-xl mx-auto bg-white p-6 m-6 w-full sm:w-full md:w-1/2 lg:w-1/3 ">
                         <div className="flex justify-between items-center gap-5">
                             <div className="flex ">
                                 <Image src={co.coop_opportunity_provider_logo || src} alt="no image" width={80} height={60} className="border rounded-xl p-1 shadow-md max-h-12"/>
@@ -21,13 +21,13 @@ export default function CoopDetails () {
                              
 
                         </div>
-                        {co.majors.map ((major) => {return(<p className="font-bold mt-8 inline-block">{`${major},`}</p>)})}
+                        {co.majors.map ((major) => {return(<p key={major} className="font-bold mt-8 inline-block">{`${major},`}</p>)})}
                         <span>...</span>
                         <div className="my-8 flex">
                             <MapPinIcon className="text-sm w-8 h-8 text-main-font-color "/>
-                            {co.city.map((city)=>{return (<p className="mx-1 inline-block">{`${city}`}</p>)})}
+                            {co.city.map((city)=>{return (<p key={city} className="mx-1 inline-block">{`${city}`}</p>)})}
                             
-                            
+                             
                         </div>
                         
                         <a className="bg-main-font-color text-white py-2 px-16 border rounded-md block w-full text-center" href={co.applying_link}>سجل</a>
